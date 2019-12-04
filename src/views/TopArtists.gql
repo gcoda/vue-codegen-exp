@@ -1,0 +1,12 @@
+query topArtists {
+  topArtists: lastFM {
+    chart {
+      topArtists {
+        nodes {
+          mbid
+          name
+        }
+      }
+    }
+  }
+}

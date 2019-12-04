@@ -1,0 +1,28 @@
+schema:
+  - ./src/generated/introspection.json
+  # - https://graphbrainz.herokuapp.com
+config:
+  federation: true
+generates:
+  ./src/generated/index.ts:
+    documents: './src/**/*.gql'
+    plugins:
+      - add: '/* eslint-disable */'
+      - add: '/* tslint:disable */'
+      - typescript
+      - typescript-operations
+      - '@therobot/codegen-vue-apollo'
+  ./src/generated/fragment-matcher.ts:
+    documents: './src/**/*.gql'
+    plugins:
+      - add: '/* eslint-disable */'
+      - add: '/* tslint:disable */'
+      - fragment-matcher
+  #
+  # # Generate local introspection
+  # ./src/generated/introspection.json:
+  #   config:
+  #     noSchemaStitching: true
+  #     federation: true
+  #   plugins:
+  # - introspection

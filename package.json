@@ -3,27 +3,48 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "concurrently npm:serve npm:codegen:watch",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "codegen:watch": "env NODE_ENV=production graphql-codegen --watch",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@therobot/codegen-vue-apollo": "0.0.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
+    "vue-apollo": "^3.0.0-beta.11",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@graphql-codegen/add": "^1.8.3",
+    "@graphql-codegen/cli": "^1.8.3",
+    "@graphql-codegen/fragment-matcher": "^1.9.1",
+    "@graphql-codegen/introspection": "^1.9.1",
+    "@graphql-codegen/time": "^1.9.1",
+    "@graphql-codegen/typescript": "^1.8.3",
+    "@graphql-codegen/typescript-graphql-files-modules": "^1.8.2",
+    "@graphql-codegen/typescript-graphql-request": "^1.8.3",
+    "@graphql-codegen/typescript-operations": "^1.8.3",
+    "@graphql-codegen/typescript-resolvers": "^1.8.3",
+    "@types/node-fetch": "^2.5.4",
     "@vue/cli-plugin-babel": "^3.1.1",
     "@vue/cli-plugin-eslint": "^3.1.1",
     "@vue/cli-plugin-typescript": "^3.1.1",
     "@vue/cli-service": "^3.1.1",
     "@vue/eslint-config-typescript": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "concurrently": "^5.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "graphql": "14.5.8",
+    "graphql-tag": "^2.9.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
+    "vue-cli-plugin-apollo": "^0.21.3",
+    "vue-template-compiler": "^2.6.10",
+    "vue-typescript-import-dts": "^4.0.0"
   }
 }

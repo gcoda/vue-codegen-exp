@@ -1,0 +1,10 @@
+query lookupArtist($query: String!) {
+  search {
+    artists(query: $query, first: 1) {
+      nodes {
+        name
+        mbid
+      }
+    }
+  }
+}
